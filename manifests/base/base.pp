@@ -16,8 +16,11 @@ class profile::base::base (
   $base_packages     = true,
   $package_ensure    = 'installed'
 ) {
-  include profile::base::accounts
   include ::augeasproviders
+
+  if $manage_accounts {
+    include profile::base::accounts
+  }
 
   if $manage_epel {
     include epel
