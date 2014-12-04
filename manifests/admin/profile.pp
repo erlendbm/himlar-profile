@@ -1,6 +1,6 @@
 #
 #
-class profile::base::admin
+class profile::admin::profile
 {
   include profile::base::base
 
