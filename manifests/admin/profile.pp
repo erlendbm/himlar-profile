@@ -20,6 +20,14 @@ class profile::admin::profile
     ensure   => 'installed',
     source   => 'http://folk.uio.no/mikaeld/norcams-ga-0.1.0-0.x86_64.rpm'
   }
+
+  pam { 'remove_password':
+    ensure  => absent,
+    service => 'sshd',
+    type    => 'auth',
+    control => 'substack',
+    module  => 'password-auth',
+  }
   # Class['googleauthenticator::pam::common'] -> Package['norcams-ga']
 
 }
