@@ -56,4 +56,6 @@ class profile::base::base (
       ensure => $package_ensure
     }
   }
+
+  include ::timezone
 }
