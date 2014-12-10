@@ -19,7 +19,7 @@ class profile::base::base (
   include ::augeasproviders
 
   if $manage_accounts {
-    include profile::base::accounts
+    include account::accounts
   }
 
   if $manage_epel {
